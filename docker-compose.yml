@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+    database:
+        env_file: .env
+        image: "postgres:latest"
+        container_name: "${DB_HOST}"
+        ports:
+            - "${DB_PORT}"
+        volumes:
+            - "my_dbdata:/var/lib/postgresql/data"
+
+volumes:
+    my_dbdata:
